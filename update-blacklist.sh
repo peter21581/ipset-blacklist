@@ -5,6 +5,11 @@
 #
 function exists() { command -v "$1" >/dev/null 2>&1 ; }
 
+if [-f /etc/ipset-blacklist/ipset-blacklist.conf ]; then
+$1 = /etc/ipset-blacklist/ipset-blacklist.conf;
+fi
+
+
 if [[ -z "$1" ]]; then
   echo "Error: please specify a configuration file, e.g. $0 /etc/ipset-blacklist/ipset-blacklist.conf"
   exit 1
