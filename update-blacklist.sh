@@ -6,7 +6,7 @@
 function exists() { command -v "$1" >/dev/null 2>&1 ; }
 
 if [ -f /etc/ipset-blacklist/ipset-blacklist.conf ]; then
-$1 = /etc/ipset-blacklist/ipset-blacklist.conf;
+set "/etc/ipset-blacklist/ipset-blacklist.conf";
 fi
 
 
